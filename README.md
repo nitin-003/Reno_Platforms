@@ -38,11 +38,10 @@ It allows users to add school details through a form and view them in a responsi
 
 ### Add School Page
 
-<img width="44" height="126" alt="001" src="https://github.com/user-attachments/assets/8bafab11-5ba7-44f8-9287-bf7e4d229fdb" />
+<img width="1722" height="825" alt="001" src="https://github.com/user-attachments/assets/a52ebd56-6181-49e1-862a-9c9c0d74c7e7" />
 <img width="1692" height="789" alt="002" src="https://github.com/user-attachments/assets/b0111423-1315-4ead-a21e-e796560c2181" />
 
 ### Show Schools Page
 
 <img width="1638" height="866" alt="ViewSchools" src="https://github.com/user-attachments/assets/66dd2be4-4dda-4364-a9a4-73be780cc31d" />
-
 
