@@ -1,6 +1,6 @@
 import mysql from "mysql2/promise";
 
-// Debug: Log environment variables (remove later in production)
+// Debug: Log environment variables (remove in production)
 console.log("🔍 Database Configuration Debug:");
 console.log("DB_HOST:", process.env.DB_HOST || "MISSING");
 console.log("DB_USER:", process.env.DB_USER || "MISSING");
@@ -26,20 +26,7 @@ export async function initializeDatabase() {
   try {
     console.log("🚀 Initializing database...");
 
-    // Create database if it doesn't exist
-    const connection = await mysql.createConnection({
-      host: process.env.DB_HOST,
-      user: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
-    });
-
-    await connection.execute(
-      `CREATE DATABASE IF NOT EXISTS \`${process.env.DB_NAME}\``
-    );
-    console.log("✅ Database created/exists");
-    await connection.end();
-
-    // Create schools table
+    // Only create schools table
     await pool.execute(`
       CREATE TABLE IF NOT EXISTS schools (
         id INT AUTO_INCREMENT PRIMARY KEY,
