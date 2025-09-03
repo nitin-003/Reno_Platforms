@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# School Management App
+A mini full-stack web application built with Next.js and MySQL.
+It allows users to add school details through a form and view them in a responsive grid layout (like an e-commerce product listing).
 
-## Getting Started
+# Features
 
-First, run the development server:
+### Add Schools Page (addSchool.jsx)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+* Built with react-hook-form for form handling & validation
+* Input validations (email format, required fields, contact number, etc.)
+* Uploads and stores school images inside public/schoolImages/
+* Fully responsive design (works on desktop & mobile)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Show Schools Page (showSchools.jsx)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+* Displays list of schools from the MySQL database
+* Each card shows Name, Address, City, and Image
+* Responsive grid layout inspired by e-commerce product listings
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Tech Stack
 
-## Learn More
+* Frontend: Next.js
+* Database: MySQL
+* Styling: CSS
 
-To learn more about Next.js, take a look at the following resources:
+# Setup Instructions
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Clone the repository
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* git clone https://github.com/your-username/school-management-app.git
+* cd school-management-app
 
-## Deploy on Vercel
+# Screenshots
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Home Page 
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<img width="1804" height="793" alt="Home Page" src="https://github.com/user-attachments/assets/d1506239-e267-459d-bee9-bf6b5991e830" />
+
+### Add School Page
+
+<img width="1735" height="866" alt="AddSchools-01" src="https://github.com/user-attachments/assets/07f3c9c4-eda9-4f5a-bb67-e2d5a54b53f2" />
+<img width="1670" height="671" alt="AddSchools-02" src="https://github.com/user-attachments/assets/2ca351bd-e374-47cd-969e-f032fe612739" />
+
+### Show Schools Page
+
+<img width="1638" height="866" alt="ViewSchools" src="https://github.com/user-attachments/assets/66dd2be4-4dda-4364-a9a4-73be780cc31d" />
+
+
