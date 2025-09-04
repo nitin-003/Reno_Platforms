@@ -8,11 +8,8 @@ let cloudinary = null;
 if (process.env.NODE_ENV === "production") {
   const { v2 } = require("cloudinary");
   cloudinary = v2;
-  cloudinary.config({
-    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-    api_key: process.env.CLOUDINARY_API_KEY,
-    api_secret: process.env.CLOUDINARY_API_SECRET,
-  });
+  // This automatically picks up CLOUDINARY_URL from env
+  cloudinary.config();
 }
 
 let dbInitialized = false;
@@ -74,7 +71,6 @@ export async function POST(request) {
 
     if (image && typeof image === "object" && image.size > 0) {
       if (image.size > 5 * 1024 * 1024) {
-        // 5MB
         return NextResponse.json(
           { error: "Image size must be less than 5MB" },
           { status: 400 }
@@ -104,8 +100,7 @@ export async function POST(request) {
 
           imageName = result.secure_url;
           console.log("✅ Image uploaded to Cloudinary:", imageName);
-        } 
-        catch (error) {
+        } catch (error) {
           console.error("❌ Cloudinary upload error:", error);
           imageName = null;
         }
@@ -147,7 +142,6 @@ export async function POST(request) {
     );
   }
 }
-
 
 
 
