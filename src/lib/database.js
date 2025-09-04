@@ -18,7 +18,7 @@ const createPool = () => {
           rejectUnauthorized: false
         } : false
       });
-    } 
+  }
     else {
       // Use individual environment variables (for local development)
       console.log('🔗 Using individual DB connection variables');

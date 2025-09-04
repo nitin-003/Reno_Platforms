@@ -4,7 +4,7 @@ export default function SchoolCard({ school }) {
       return '/placeholder-school.jpg';
     }
 
-    // If image is a Cloudinary URL
+    // If image starts with 'https://', it's a Cloudinary URL
     if (school.image.startsWith('https://')) {
       return school.image;
     }
@@ -20,9 +20,7 @@ export default function SchoolCard({ school }) {
         alt={school.name}
         className="school-image"
         onError={(e) => {
-          if (e.target.src !== '/placeholder-school.jpg') {
             e.target.src = '/placeholder-school.jpg';
-          }
         }}
       />
       <div className="school-info">
@@ -33,5 +31,4 @@ export default function SchoolCard({ school }) {
     </div>
   );
 }
-
 
