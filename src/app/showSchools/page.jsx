@@ -64,7 +64,7 @@ export default function ShowSchools() {
           <p style={{ 
             textAlign: 'center', 
             marginBottom: '2rem', 
-            color: '#64748b',
+            color: '#020a16ff',
             fontSize: '1.1rem' 
           }}>
             Found {schools.length} school{schools.length !== 1 ? 's' : ''}

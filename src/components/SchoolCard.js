@@ -1,12 +1,22 @@
 export default function SchoolCard({ school }) {
-  const imageSrc = school.image 
-    ? `/schoolImages/${school.image}` 
-    : '/placeholder-school.jpg';
+  const getImageSrc = () => {
+    if (!school.image) {
+      return '/placeholder-school.jpg';
+    }
+    
+    // If image starts with 'https://', it's a Cloudinary URL
+    if (school.image.startsWith('https://')) {
+      return school.image;
+    }
+    
+    // Otherwise, it's a local file
+    return `/schoolImages/${school.image}`;
+  };
 
   return (
     <div className="school-card">
       <img 
-        src={imageSrc} 
+        src={getImageSrc()} 
         alt={school.name}
         className="school-image"
         onError={(e) => {
